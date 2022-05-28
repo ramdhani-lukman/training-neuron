@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout</title>
+</head>
+<body>
+    <p>wait 5 seconds.....</p>
+    <h2 id="message"></h2>
+
+    <button id="hapusText">Hapus</button>
+
+    <div id="welcomeText"></div>
+
+    <img src="../01/images/rx7.jpeg" style="width: 300px;" alt="" id="example">
+    <script>
+
+        document.getElementById("hapusText").addEventListener("click",function(){
+            alert("deleting text....");
+            setTimeout(()=>{
+                document.getElementById('message').style.visibility = 'hidden'
+            },5000)
+        });
+
+        function greeting(){
+            document.getElementById("message").innerHTML = "Welcome"
+        }
+
+        setTimeout(greeting,5000)
+
+        setInterval(() => {
+            // document.getElementById("welcomeText").innerHTML += "Halooo "
+        }, 1000);
+
+        setInterval(()=>{
+            urlPath = "../01/images/";
+            imageName = ['rx7.jpeg','rx72.jpeg'];
+            randomNumber = Math.floor(Math.random() * 2)
+            imagePath = urlPath + imageName[randomNumber];
+            document.getElementById("example").src = imagePath;
+        },2000);
+    </script>
+</body>
+</html>

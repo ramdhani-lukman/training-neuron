@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Data type, Pass value & reference</title>
+</head>
+
+<body>
+    <script>
+        // Type data primitif
+        var name                = "Ramdhani Lukman";
+        var umur                = 24;
+        var statusPernikahan    = true;
+        var anak                = ['anak 1','anak 2'];
+        const person            = {
+            first_name  : "Dadang",
+            last_name   : "Jupiter"
+        }
+        const functionExample = (name) => {
+            return "Hello world " + name;
+        }
+
+        console.log(name);
+        console.log(umur);
+        console.log(statusPernikahan);
+        console.log(anak);
+        console.log(person);
+        console.log(typeof(functionExample));
+
+        console.log(functionExample("Wadidaw"))
+
+        const calculator = (num1,operator,num2) => {
+            switch(operator){
+                case "+":
+                    return num1+num2;
+                    break;
+                case "-":
+                    return num1 - num2;
+                    break;
+                case ":":
+                    return num1 / num2;
+                    break;
+                
+            }
+        }
+        
+        console.log(calculator("3",'-',2));
+    </script>
+</body>
+
+</html>

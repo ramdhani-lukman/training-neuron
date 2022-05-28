@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Event</title>
+</head>
+<body onload="load()">
+    <input type="text" name="nama" id="name">
+    <select name="negara" id="country">
+        <option value="ID">Indonesia</option>
+        <option value="SG">Singapore</option>
+        <option value="MY">Malaysia</option>
+    </select>
+    <button id="button">Klik Saya</button>
+
+    <img src="../01/images/rx72.jpeg" id="gambar" alt="" style="width: 300px" onmouseover="hidegambar()" onmouseleave="showGambar()">
+
+    <script>
+        (function(){console.log("WADIDAW")})();
+
+        var arrowFunction = () => {
+            console.log("Arrow function")
+        }
+
+
+        function load(){
+            console.log('waw')
+        }
+        function hidegambar(){
+            document.getElementById("gambar").style.display = "none"
+        }
+
+        function showGambar(){
+            document.getElementById("gambar").style.display = "block"
+        }
+        function klikSaya(){
+            alert("Click saya");
+        }
+
+        function changeCountry(){
+            var value = document.getElementById("country").value
+            alert("Anda memilih negara " + value);
+        }
+
+        function ketik(){
+            var value = document.getElementById("name").value
+            console.log("Anda melakukan ketikan "+value);
+        }
+
+        document.getElementById("button").addEventListener("click",klikSaya)
+        document.getElementById("country").addEventListener("change",changeCountry)
+        document.getElementById("name").addEventListener("keyup",ketik)
+
+    </script>
+</body>
+</html>
