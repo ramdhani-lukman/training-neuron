@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+<body>
+    <button id="button">Klik Saya</button>
+    <br>
+    <img id="image" src="../01/images/rx72.jpeg" style="width: 300px" alt="">
+    <hr>
+    <button id="button2">Button 2</button>
+    <p id="date"></p>
+    <hr>
+    <button id="button3">Button 3</button>
+    <p id="text">Hiiii</p>
+
+
+    <script>
+        const displayDate = () => {
+            document.getElementById("date").innerHTML = Date();
+        }
+
+        document.getElementById("button").addEventListener("click",function(){
+            if(document.getElementById("image").style.visibility == 'hidden'){
+                document.getElementById("image").style.visibility = ''
+            }else{
+                document.getElementById("image").style.visibility = "hidden"
+            }
+        });
+
+        document.getElementById("button2").addEventListener("click",displayDate);
+        document.getElementById("button3").addEventListener("click",function(){
+            document.getElementById("text").innerHTML = "Haloooo";
+            color = ['black','blue','red','orange','green','grey']
+            randomNumber = Math.floor(Math.random() * 6)
+            document.getElementById("text").style.color = color[randomNumber];
+            document.getElementById("text").style.fontSize = "100px";
+        });
+    </script>
+</body>
+</html>
